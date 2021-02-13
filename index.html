@@ -8,6 +8,9 @@
     <title>Document</title>
   </head>
   <body class="container">
+    <div class="modal">
+      <figure class="modal__figure"><img src="" alt="" class="src" /></figure>
+    </div>
     <div class="gallery">
       <figure class="figure figure__1">
         <img
@@ -91,5 +94,18 @@
         />
       </figure>
     </div>
+    <script>
+      document.querySelectorAll(".figure").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          let src = e.originalTarget.src;
+          document.querySelector(".modal").classList.add("show");
+          document.querySelector(".src").src = src;
+        });
+      });
+      let modal = document.querySelector(".modal");
+      modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+    </script>
   </body>
 </html>
