@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  @media (max-width: 600px) {
+    font-size: 20%;
+  }
+}
+.container {
+  width: 100%;
+  height: min-content;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 12rem));
+  grid-template-rows: repeat(9, 5vw);
+  margin: auto;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+.figure {
+  border-radius: 1.5rem;
+  display: block;
+  cursor: pointer;
+
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.1) translateY(-2rem);
+    z-index: 5000;
+    box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.8);
+  }
+  &__1 {
+    background: red;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 4;
+  }
+  &__2 {
+    background: yellow;
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 5;
+  }
+  &__3 {
+    background: blue;
+    grid-column: 7 / span 2;
+    grid-row: 1 / span 1;
+  }
+  &__4 {
+    background: orangered;
+    grid-column: 9 / -1;
+    grid-row: 1 / span 1;
+    img {
+      object-position: 20% 71% !important;
+    }
+  }
+  &__5 {
+    background: green;
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 3;
+  }
+  &__6 {
+    background: white;
+    grid-column: 3 / span 2;
+    grid-row: 5 / span 1;
+  }
+  &__7 {
+    background: rgb(20, 130, 220);
+    grid-column: 3 / span 2;
+    grid-row: 6 /8;
+  }
+  &__8 {
+    background: rgb(173, 142, 148);
+    grid-column: 7 / 9;
+    grid-row: 2 / span 4;
+  }
+  &__9 {
+    background: rgb(53, 24, 100);
+    grid-column: 9 / span 1;
+    grid-row: 2 / span 1;
+  }
+  &__10 {
+    background: rgb(24, 100, 40);
+    grid-column: 10/-1;
+    grid-row: 2 / span 1;
+  }
+  &__11 {
+    background: rgb(100, 24, 59);
+    grid-column: 9/-1;
+    grid-row: 3 / span 4;
+  }
+  &__12 {
+    background: rgb(100, 24, 59);
+    grid-column: 1 / span 4;
+    grid-row: 8 / span 2;
+  }
+  &__13 {
+    background: rgb(100, 82, 24);
+    grid-column: 5 / span 4;
+    grid-row: 6 /10;
+  }
+  &__14 {
+    background: rgb(24, 59, 100);
+    grid-column: 9 / -1;
+    grid-row: 7 /10;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
